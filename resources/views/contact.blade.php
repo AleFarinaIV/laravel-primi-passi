@@ -28,10 +28,27 @@
 
     <main>
 
-        <div class="container text-center py-4">
-            <div class="row">
+        <div class="container py-4">
+            <div class="row text-center">
                 <div class="col-12">
                     <h1>{{ $message }}</h1>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-12">
+                    <h5 class="pb-5">{{ $could_contact_message }}</h5>
+                    <div class="row">
+                        @foreach ($contact_array as $contact)
+                            <div class="col-3">
+                                <ul class="list-unstyled">
+                                    <h3>{{ $contact['name']}}</h3>
+                                    <li>{{ $contact['phone'] }}</li>
+                                    <li>{{ $contact['email'] }}</li>
+                                    <li>{{ $contact['address'] }}</li>
+                                </ul>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
