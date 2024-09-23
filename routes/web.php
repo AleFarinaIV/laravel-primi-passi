@@ -15,7 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $message = "Hello World!";
+    $message = "This is our Homepage!";
 
     return view('home', compact('message'));
 })->name("homepage");
+
+Route::get('/about', function () { // path della get -> nome della component
+
+    $message = 'This is About section!';
+
+    return view('about', compact('message')); // function view -> nome della component
+})->name('about'); // function name -> nome che preferisci
+
+Route::get('/contact', function () {
+
+    $message = 'This is Contact section!';
+
+    return view('contact', compact('message'));
+})->name('contact');
